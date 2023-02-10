@@ -28,6 +28,7 @@
     "import/extensions": "off",
     "react/function-component-definition": "off",
     "react/require-default-props": "off",
+    "import/prefer-default-export": "off",
     "no-duplicate-imports": "error",
     "prefer-destructuring": [
       "error",

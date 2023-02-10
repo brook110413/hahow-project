@@ -17,7 +17,7 @@ CustomCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  activeIndex: PropTypes.number,
+  activeIndex: PropTypes.string,
 };
 
 export default CustomCard;

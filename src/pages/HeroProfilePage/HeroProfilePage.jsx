@@ -1,29 +1,26 @@
 import { useLoaderData } from 'react-router-dom';
-import { Paper, Button } from '@mui/material';
-import { Add, Remove } from '@mui/icons-material';
+import { Grid } from '@mui/material';
+import { StyledGrid } from './heroProfilePage.style';
+import PanelItem from './components/PanelItem';
 
 const HeroProfilePage = () => {
-  console.log('HeroProfilePage');
   const heroProfileData = useLoaderData();
 
-  return (
-    <Paper elevation={3}>
-      <div>
-        <div>
-          <div>{Object.keys(heroProfileData)[0]}</div>
-          <div>
-            <Button>
-              <Add />
-            </Button>
-            <Button>
-              <Remove />
-            </Button>
-          </div>
+  const heroProfileObj = Object.entries(heroProfileData).map(
+    ([skill, value]) => ({ skill, value }),
+  );
 
-          {heroProfileData[Object.keys(heroProfileData)[0]]}
-        </div>
-      </div>
-    </Paper>
+  return (
+    <StyledGrid container>
+      <Grid item xs={6}>
+        {heroProfileObj.map(({ skill, value }) => (
+          <PanelItem key={skill} skill={skill} value={value} />
+        ))}
+      </Grid>
+      <Grid item xs={6}>
+        123
+      </Grid>
+    </StyledGrid>
   );
 };
 
