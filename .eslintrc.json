@@ -27,6 +27,7 @@
     "import/no-unresolved": "off",
     "import/extensions": "off",
     "react/function-component-definition": "off",
+    "react/require-default-props": "off",
     "no-duplicate-imports": "error",
     "prefer-destructuring": [
       "error",

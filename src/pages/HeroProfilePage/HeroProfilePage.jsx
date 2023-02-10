@@ -1,13 +1,30 @@
 import { useLoaderData } from 'react-router-dom';
-import { Paper } from '@mui/material';
+import { Paper, Button } from '@mui/material';
+import { Add, Remove } from '@mui/icons-material';
 
 const HeroProfilePage = () => {
   console.log('HeroProfilePage');
   const heroProfileData = useLoaderData();
 
-  console.log('heroPeofileData', heroProfileData);
+  return (
+    <Paper elevation={3}>
+      <div>
+        <div>
+          <div>{Object.keys(heroProfileData)[0]}</div>
+          <div>
+            <Button>
+              <Add />
+            </Button>
+            <Button>
+              <Remove />
+            </Button>
+          </div>
 
-  return <Paper elevation={3}>{heroProfileData.agi}</Paper>;
+          {heroProfileData[Object.keys(heroProfileData)[0]]}
+        </div>
+      </div>
+    </Paper>
+  );
 };
 
 export default HeroProfilePage;

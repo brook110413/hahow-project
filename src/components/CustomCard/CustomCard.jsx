@@ -1,22 +1,23 @@
 import PropTypes from 'prop-types';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import sxStyle from './customCard.style';
+import { CardContent, CardMedia, Typography } from '@mui/material';
+import StyledCard from './customCard.style';
 
-const CustomCard = ({ name, image }) => (
-  <Card sx={sxStyle.card}>
-    <CardMedia sx={sxStyle.cardMedia} image={image} />
+const CustomCard = ({ name, image, activeIndex = null, id }) => (
+  <StyledCard activeIndex={activeIndex} id={id}>
+    <div className="cardMediaContainer">
+      <CardMedia image={image} />
+    </div>
     <CardContent>
       <Typography>{name}</Typography>
     </CardContent>
-  </Card>
+  </StyledCard>
 );
 
 CustomCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  activeIndex: PropTypes.number,
 };
 
 export default CustomCard;
