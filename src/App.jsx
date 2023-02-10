@@ -8,6 +8,11 @@ const App = () => (
     <Container
       sx={{
         textAlign: 'center',
+        marginTop: '100px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
       }}
     >
       <RouterProvider router={router} />

@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 import HeroListPage from '@/pages/HeroListPage';
 import NotFoundPage from '@/pages/NotFoundPage';
 import HeroProfilePage from '@/pages/HeroProfilePage';
+import { heroesListLoader, heroProfileLoader } from '@/utils/helper';
 
 const ROUTES = [
   {
@@ -12,10 +13,12 @@ const ROUTES = [
   {
     path: '/heroes',
     element: <HeroListPage />,
+    loader: heroesListLoader,
     children: [
       {
         path: ':heroId',
         element: <HeroProfilePage />,
+        loader: heroProfileLoader,
       },
     ],
   },
