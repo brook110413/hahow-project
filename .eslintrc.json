@@ -20,11 +20,25 @@
   },
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "import/no-extraneous-dependencies": [
+    "import/no-extraneous-dependencies": ["off"],
+    "camelcase": "error",
+    "spaced-comment": "error",
+    "quotes": ["error", "single"],
+    "no-duplicate-imports": "error",
+    "prefer-destructuring": [
       "error",
-      {
-        "devDependencies": true
-      }
-    ]
+      { "array": true, "object": true },
+      { "enforceForRenamedProperties": false }
+    ],
+    "arrow-parens": ["error", "always"],
+    "object-shorthand": ["error", "always"],
+    "no-else-return": "error",
+    "no-unused-vars": "error",
+    "no-use-before-define": "error",
+    "arrow-body-style": ["error", "as-needed"],
+    "no-nested-ternary": "error",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "react/function-component-definition": "off"
   }
 }
