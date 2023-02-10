@@ -24,6 +24,9 @@
     "camelcase": "error",
     "spaced-comment": "error",
     "quotes": ["error", "single"],
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "react/function-component-definition": "off",
     "no-duplicate-imports": "error",
     "prefer-destructuring": [
       "error",
@@ -36,9 +39,6 @@
     "no-unused-vars": "error",
     "no-use-before-define": "error",
     "arrow-body-style": ["error", "as-needed"],
-    "no-nested-ternary": "error",
-    "import/no-unresolved": "off",
-    "import/extensions": "off",
-    "react/function-component-definition": "off"
+    "no-nested-ternary": "error"
   }
 }

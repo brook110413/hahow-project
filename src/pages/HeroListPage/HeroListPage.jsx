@@ -1,3 +1,10 @@
-const HeroListPage = () => <div>HeroListPage</div>;
+import { Outlet } from 'react-router-dom';
+
+const HeroListPage = () => (
+  <div>
+    HeroListPage
+    <Outlet />
+  </div>
+);
 
 export default HeroListPage;

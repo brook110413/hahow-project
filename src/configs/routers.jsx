@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import HeroListPage from '@/pages/HeroListPage';
 import NotFoundPage from '@/pages/NotFoundPage';
+import HeroProfilePage from '@/pages/HeroProfilePage';
 
 const ROUTES = [
   {
@@ -11,6 +12,12 @@ const ROUTES = [
   {
     path: '/heroes',
     element: <HeroListPage />,
+    children: [
+      {
+        path: ':heroId',
+        element: <HeroProfilePage />,
+      },
+    ],
   },
 ];
 
