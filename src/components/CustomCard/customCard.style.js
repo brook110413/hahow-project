@@ -18,7 +18,7 @@ const StyledCard = styled(Card, {
     transition: 'transform 0.8s',
     '& .MuiCardMedia-root': {
       transition: 'transform 0.8s',
-      transform: 'scale(1.1)',
+      transform: 'scale(1.3)',
     },
   },
 }));

@@ -5,21 +5,13 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from '@/styles/theme';
 import store from '@/redux/store';
 import router from '@/configs/routers';
+import sxStyle from './app.style';
 
 const App = () => (
   <Provider store={store}>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container
-        sx={{
-          textAlign: 'center',
-          marginTop: '100px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-        }}
-      >
+      <Container sx={sxStyle.container}>
         <RouterProvider router={router} />
       </Container>
     </ThemeProvider>

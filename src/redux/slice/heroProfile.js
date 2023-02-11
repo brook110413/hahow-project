@@ -10,6 +10,7 @@ const initialState = {
   profileFormat: [],
   totalValue: null,
   lastValue: null,
+  isLoading: false,
 };
 
 export const heroProfileSlice = createSlice({
@@ -39,9 +40,17 @@ export const heroProfileSlice = createSlice({
       const skill = action.payload;
       state.profile = { ...state.profile, [skill]: state.profile[skill] - 1 };
     },
+    updateLoadingStatus: (state, action) => {
+      state.isLoading = action.payload;
+    },
   },
 });
-export const { getProfile, formatProfile, increment, decrement } =
-  heroProfileSlice.actions;
+export const {
+  getProfile,
+  formatProfile,
+  increment,
+  decrement,
+  updateLoadingStatus,
+} = heroProfileSlice.actions;
 
 export default heroProfileSlice.reducer;

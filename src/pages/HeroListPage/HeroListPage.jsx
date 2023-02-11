@@ -4,17 +4,21 @@ import {
   useNavigation,
   useParams,
 } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { Paper, Box } from '@mui/material';
 import CustomCard from '@/components/CustomCard';
+import CustomBackdrop from '@/components/CustomBackdrop';
 import sxStyle, { StyledLink } from './heroListPage.style';
 
 const HeroListPage = () => {
   const { heroId } = useParams();
   const heroesListData = useLoaderData();
   const navigation = useNavigation();
+  const { isLoading } = useSelector((state) => state.heroProfile);
 
   return (
     <Box>
+      <CustomBackdrop open={isLoading} />
       <Paper sx={sxStyle.container} elevation={3}>
         {heroesListData.map(({ id, name, image }) => (
           <StyledLink key={id} to={`/heroes/${id}`}>

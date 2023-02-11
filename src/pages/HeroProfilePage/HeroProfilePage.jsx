@@ -2,7 +2,11 @@ import { useEffect } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Grid, Button, Box } from '@mui/material';
-import { getProfile, formatProfile } from '@/redux/slice/heroProfile';
+import {
+  getProfile,
+  formatProfile,
+  updateLoadingStatus,
+} from '@/redux/slice/heroProfile';
 import { StyledGrid } from './heroProfilePage.style';
 import PanelItem from './components/PanelItem';
 
@@ -20,11 +24,16 @@ const HeroProfilePage = () => {
     const headers = {
       'Content-Type': 'application/json',
     };
+    dispatch(updateLoadingStatus(true));
     fetch(api, {
       method,
       headers,
       body: JSON.stringify(profile),
-    }).then((res) => console.log('res', res));
+    }).then((res) => {
+      if (res.ok) {
+        dispatch(updateLoadingStatus(false));
+      }
+    });
   };
 
   useEffect(() => {
