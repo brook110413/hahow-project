@@ -14,6 +14,7 @@ const ROUTES = [
     path: '/heroes',
     element: <HeroListPage />,
     loader: heroesListLoader,
+    errorElement: <NotFoundPage />,
     children: [
       {
         path: ':heroId',

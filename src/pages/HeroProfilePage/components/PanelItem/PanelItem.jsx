@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Button, Box } from '@mui/material';
 import { Add, Remove } from '@mui/icons-material';
 import { increment, decrement } from '@/redux/slice/heroProfile';
+import sxStyle from './panelItem.style';
 
 const PanelItem = ({ skill, value, skillIndex }) => {
   const dispatch = useDispatch();
@@ -24,18 +25,12 @@ const PanelItem = ({ skill, value, skillIndex }) => {
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
-      <Box
-        sx={{
-          width: '100px',
-        }}
-      >
-        {skill.toUpperCase()}
-      </Box>
+      <Box sx={sxStyle.container}>{skill.toUpperCase()}</Box>
       <Box display="flex" justifyContent="center" alignItems="center">
         <Button onClick={handleIncrease} disabled={lastValue === 0}>
           <Add />
         </Button>
-        <div>{value && value}</div>
+        <Box sx={sxStyle.currentValue}>{value && value}</Box>
         <Button
           onClick={handleDecrease}
           disabled={profileFormat[skillIndex]?.value === 0}
