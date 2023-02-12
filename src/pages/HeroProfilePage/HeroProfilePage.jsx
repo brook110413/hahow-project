@@ -20,16 +20,15 @@ const HeroProfilePage = () => {
 
   const updateProfile = () => {
     const api = `https://hahow-recruit.herokuapp.com/heroes/${heroId}/profile`;
-    const method = 'PATCH';
-    const headers = {
-      'Content-Type': 'application/json',
+    const fetchData = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(profile),
     };
     dispatch(updateLoadingStatus(true));
-    fetch(api, {
-      method,
-      headers,
-      body: JSON.stringify(profile),
-    }).then((res) => {
+    fetch(api, fetchData).then((res) => {
       if (res.ok) {
         dispatch(updateLoadingStatus(false));
       }
