@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { Grid, Button, Box, Typography } from '@mui/material';
 import {
   getProfile,
@@ -14,6 +15,7 @@ const HeroProfilePage = () => {
   const loaderData = useLoaderData();
   const { heroId } = useParams();
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { profile, profileFormat, lastValue } = useSelector(
     (state) => state.heroProfile,
   );
@@ -61,13 +63,16 @@ const HeroProfilePage = () => {
       </Grid>
       <Grid item xs={12} sm={6} sx={sxStyle.lastValueContainer}>
         <div>
-          <Box>剩餘點數: {lastValue}</Box>
+          <Box>
+            {t('last_point')}
+            {lastValue}
+          </Box>
           <Button
             onClick={updateProfile}
             disabled={lastValue !== 0}
             sx={sxStyle.button}
           >
-            <Typography variant="h6">儲存</Typography>
+            <Typography variant="h6">{t('save')}</Typography>
           </Button>
         </div>
       </Grid>
