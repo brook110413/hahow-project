@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Box } from '@mui/material';
-import { Add, Remove } from '@mui/icons-material';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import { increment, decrement } from '@/redux/slice/heroProfile';
 import sxStyle from './panelItem.style';
 
@@ -28,14 +30,14 @@ const PanelItem = ({ skill, value, skillIndex }) => {
       <Box sx={sxStyle.container}>{skill.toUpperCase()}</Box>
       <Box display="flex" justifyContent="center" alignItems="center">
         <Button onClick={handleIncrease} disabled={lastValue === 0}>
-          <Add />
+          <AddIcon />
         </Button>
         <Box sx={sxStyle.currentValue}>{value && value}</Box>
         <Button
           onClick={handleDecrease}
           disabled={profileFormat[skillIndex]?.value === 0}
         >
-          <Remove />
+          <RemoveIcon />
         </Button>
       </Box>
     </Box>

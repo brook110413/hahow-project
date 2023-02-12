@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Card } from '@mui/material';
+import Card from '@mui/material/Card';
 
 const StyledCard = styled(Card, {
   shouldForwardProp: (prop) => prop !== 'activeIndex' && prop !== 'id',

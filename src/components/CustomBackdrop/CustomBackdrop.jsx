@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import { Backdrop, CircularProgress } from '@mui/material';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 import sxStyle from './customBackdrop.style';
 
 const CustomBackdrop = ({ open }) => (

@@ -5,7 +5,8 @@ import {
   useParams,
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Paper, Box } from '@mui/material';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 import CustomCard from '@/components/CustomCard';
 import CustomBackdrop from '@/components/CustomBackdrop';
 import sxStyle, { StyledLink } from './heroListPage.style';

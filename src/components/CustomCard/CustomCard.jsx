@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
-import { CardContent, CardMedia, Typography } from '@mui/material';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 import StyledCard from './customCard.style';
 
 const CustomCard = ({ name, image, activeIndex = null, id }) => (

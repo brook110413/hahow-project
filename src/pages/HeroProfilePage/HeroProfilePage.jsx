@@ -2,7 +2,10 @@ import { useEffect } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { Grid, Button, Box, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import {
   getProfile,
   formatProfile,
