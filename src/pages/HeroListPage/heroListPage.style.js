@@ -12,6 +12,8 @@ const sxStyle = {
   },
 };
 
-export const StyledLink = styled(Link)(() => ({}));
+export const StyledLink = styled(Link)(() => ({
+  textDecoration: 'none',
+}));
 
 export default sxStyle;
