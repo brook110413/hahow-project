@@ -1,5 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
+// custom theme
 const theme = createTheme({
   components: {
     MuiButton: {
