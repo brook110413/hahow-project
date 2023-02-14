@@ -68,7 +68,7 @@ http://localhost:5173/
 - redux - redux 資料放置處
 - styles - 全域樣式處裡放置處
   - theme.js - MUI 全域客製化樣式
-- utils - 共用邏輯、小工具放置處
+- utils - 共用 function 放置處
 
 ## Web 邏輯架構
 
@@ -105,11 +105,12 @@ graph TD;
 ```mermaid
 graph TD;
     A[Hero List Page] --> B(點擊任一 Hero Card)
-    B --> C(畫面顯示 Loading...)
+    B --> |等待 API response| C(畫面顯示 Loading...)
     C --> |Api 成功 fetch 資料| D(Hero Profile Page)
     D --> E(分配 Hero 能力值)
     E -->F(儲存分配後的能力值)
-    F -->|等待 api reponse| G[顯示 loading animation]
+    F --> |等待 API reponse| G(顯示 loading animation)
+    G --> |API response ok| H[關閉 laoding animation]
 ```
 
 # 第三方 library
@@ -136,3 +137,17 @@ graph TD;
   - 可依需求客製化共用的 theme，保持專案的樣式統一性
 - react-i18next v12.1.5
   - 處理多國語系的開發
+
+# 註解的原則
+
+目前專案內的註解，我大都時候都是在共用的地方來做撰寫
+
+- 專案內會被重複使用到的顏色、樣式等
+- helper function
+- 118n 的設定
+
+方便讓共同維護專案的成員了解這部分或這隻檔案能做什麼
+
+# 專案遇到的困難
+
+# 可以再 improve 的地方
