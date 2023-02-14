@@ -17,9 +17,6 @@ i18n.use(initReactI18next).init({
     // 是否要讓字詞 escaped 來防止 xss 攻擊，這裡因為 React.js 已經做了，就設成 false即可
     escapeValue: false,
   },
-  react: {
-    wait: true, // 等待翻譯完成才會 render 畫面
-  },
 });
 
 export default i18n;

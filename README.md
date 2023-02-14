@@ -88,7 +88,7 @@ graph TD;
     B --> |redirect| C(Hero List Page)
     C --> |點擊任一 Hero Card| F(Hero Profile Page)
     F --> G(分配 Hero 能力值)
-    G --> H(儲存分配後的能力值)
+    G --> H[儲存分配後的能力值]
     C --> D{判斷 route 是否存在}
     F --> D
     D --> |does not exist| E(Not found Page)
@@ -126,13 +126,13 @@ graph TD;
   - 目前此專案主要有跑的是 prettier 和 lint
 - react-router-dom v6.8.1
   - 處理 react router 的配置
-  - 目前專案使用的是 v6.4 上的版本，使用 createBrowserRouter 等 API 來建置 router，並且能設定在進入特定的 route 後做畫面的資料處理
+  - 目前專案使用的是 v6.4 上的版本，使用 createBrowserRouter 等 API 來建置 router，並且能設定在進入特定的 route 後做去 Fetch API 取得資料後再 render 出畫面
 - react-redux v8.0.5
   - 管理 react 的全域 state
-  - 處理同步、分同步的資料
+  - 處理同步、非同步的資料
   - 此專案使用 Redux Toolkit 來做 redux 的設定
 - material-ui v5.11.8
-  - 目前最多人使用的 react css framework
+  - 目前最多人使用的 React Css Framework
   - v5 之後提供 emotion、styled-component 等 CSS-in-JS library 來設定樣式
   - 可依需求客製化共用的 theme，保持專案的樣式統一性
 - react-i18next v12.1.5
