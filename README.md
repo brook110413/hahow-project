@@ -122,7 +122,7 @@ graph TD;
 - prettier v2.8.4
   - 可自動處理程式排版，增加可讀性
 - husky v8.0.3
-  - 建立 pre-commit hook，讓每一次 commit 都跑設定好的 script，確認無問題才能成功送出 commit
+  - 建立 pre-commit hook，讓每一次 commit 都跑設定好的 script，確認無問題才能成功送出 commit，增加專案程式碼品質
   - 目前此專案主要有跑的是 prettier 和 lint
 - react-router-dom v6.8.1
   - 處理 react router 的配置
@@ -132,7 +132,7 @@ graph TD;
   - 處理同步、非同步的資料
   - 此專案使用 Redux Toolkit 來做 redux 的設定
 - material-ui v5.11.8
-  - 目前最多人使用的 React Css Framework
+  - 目前最受歡迎的 React Css Framework
   - v5 之後提供 emotion、styled-component 等 CSS-in-JS library 來設定樣式
   - 可依需求客製化共用的 theme，保持專案的樣式統一性
 - react-i18next v12.1.5
@@ -140,7 +140,7 @@ graph TD;
 
 # 註解的原則
 
-目前專案內的註解，我大都時候都是在共用的地方來做撰寫
+目前專案內的註解，我大都時候都是在共用的檔案來做撰寫，例如：
 
 - 專案內會被重複使用到的顏色、樣式等
 - helper function
@@ -152,11 +152,11 @@ graph TD;
 
 - #### Library 版本的更新使用
   - 在開始製作此專案時，第一個時間點的想法是會需要用到哪些 library 以及其使用的版本，`vite`、`eslint`、`husky` 等提升開發品質的 library 先是首選，接著是 `react-router-dom` 及 `Material-UI` 的版本選擇。
-  - 我以往的開發對於 react-router-dom v5 的部分比較熟悉，一直都沒機會使用 v6.4 以上的版本，先前知道 v6.4 有新增許多方便的 API 來做使用，例如新增了 `createBrowserRouter` 等等，且能夠好的針對 route 做設計，因此藉由此次專案使用 v6.4 的版本來 router 的配置
-  - 再來是 `Material-UI` 的部分，目前的版本為 v5，捨棄以往 JSS 的寫法，使用 emotion、styled-components 為主的渲染樣式的方式，大幅的提升效能，加速 page speed 的部分，讓使用者有更好的體驗
+  - 我以往的開發對於 react-router-dom v5 的部分比較熟悉，一直都沒機會使用 v6.4 以上的版本，先前知道 v6.4 有新增許多方便的 API 來做使用，例如新增了 `createBrowserRouter` 等等，且能夠更好的針對 route 做設計，因此藉由此次專案使用 v6.4 的版本來做 router 的配置
+  - 再來是 `Material-UI` 的部分，目前的版本為 v5，捨棄以往 v4 JSS 的寫法，使用 emotion、styled-components 為主的 CSS-in-JS 渲染樣式的方式，大幅的提升效能，加速 page speed，讓使用者有更好的體驗
   - 以上兩個 library 的版本並不是我平常在使用的，因此一開始先邊看官方的 document 一邊來實作，但藉由此次專案讓我不僅嘗試了新版的使用方式，也更有效的完成專案的內容
 - #### 如何有效的簡化程式碼
-  - 一開始在實作的時候把內容想的太複雜，讓每一個能力值都有自己的 state 和更新 state 的 function，但做到一半就發現有許多重複會使用到的邏輯和程式碼，因此先將重複會使用的到程式碼拆分成 component，簡化程式碼的行數，接著更新英雄能力值的邏輯也是共用的，因此也開始把這部分改寫成一個 function，讓程式變的更為簡潔也更容易維護，也讓整個專案內容更為模組化
+  - 一開始在實作的時候把 hero profile 更新的方式想的太複雜，讓每一個能力值都有自己的 state 和更新 state 的 function，但做到一半就發現有許多重複會使用到的邏輯和程式碼，因此先將重複會使用的到程式碼拆分成 component，簡化程式碼的行數，接著更新英雄能力值的邏輯也是共用的，因此也開始把這部分改寫成一個 function，讓程式變的更為簡潔也更容易維護，也讓整個專案內容更為模組化
 
 # 可以再 improve 的地方
 
