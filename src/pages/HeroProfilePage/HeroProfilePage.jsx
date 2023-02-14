@@ -65,7 +65,7 @@ const HeroProfilePage = () => {
         </Box>
       </Grid>
       <Grid item xs={12} sm={6} sx={sxStyle.lastValueContainer}>
-        <div>
+        <Box>
           <Box>
             {t('last_point')}
             {lastValue}
@@ -77,7 +77,7 @@ const HeroProfilePage = () => {
           >
             <Typography variant="h6">{t('save')}</Typography>
           </Button>
-        </div>
+        </Box>
       </Grid>
     </StyledGrid>
   );
